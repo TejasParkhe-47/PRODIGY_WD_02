@@ -1,0 +1,567 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    
+}
+
+
+h1{
+    display: none;
+}
+/*.container{
+    display: flex;
+    justify-content:space-between;
+}*/
+
+body{
+    background-color: white;
+    width: 100%;
+    height: 100vh;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   /* background-image: radial-gradient(circle at center center, rgb(241, 195, 19),rgb(244, 150, 32),rgb(246, 105, 45),rgb(249, 59, 57),rgb(251, 14, 70));*/
+   background: linear-gradient(45deg, rgba(2,0,36,1) 0%, rgba(164,14,47,1) 0%, rgba(141,0,255,1) 96%);
+    
+}
+.outercircle{
+    width: 250px;
+    height: 250px;
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid black;
+    margin-top: 100px
+             
+
+}
+.innercircle{
+    width: 230px;
+    height: 230px;
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: linear-gradient(45deg, rgba(187, 187, 187,0.04) 0%, rgba(187, 187, 187,0.04) 50%,rgba(86, 86, 86,0.04) 50%, rgba(86, 86, 86,0.04) 100%),linear-gradient(135deg, rgba(166, 166, 166,0.04) 0%, rgba(166, 166, 166,0.04) 50%,rgba(92, 92, 92,0.04) 50%, rgba(92, 92, 92,0.04) 100%),linear-gradient(90deg, rgb(20,20,20),rgb(20,20,20)); background-size: 142px 142px;
+
+}
+
+
+
+.text{
+    color: white;
+    font-size: 23px;
+}
+.min{
+    font-size: 40px;
+}
+.sec{
+    font-size: 30px;
+}
+.minsec{
+    font-size: 25px;
+}
+.button-wrapper{
+    width: 250px;
+    margin-top: 25px;
+    display: flex;
+    justify-content:space-between;
+   
+}
+
+.button{
+    width: 90px;
+    height: 40px;
+    border-radius:10px;
+    border: 2px solid black;
+    background-color: white;
+    color: black;
+    cursor: pointer;
+    margin-left: 10px ;
+    margin-right: 10px ;
+    @import url('https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100..900;1,100..900&family=Teko:wght@300..700&display=swap');
+    
+    font-style:normal;
+    font-weight: 700;
+    
+}
+
+.button:hover{
+    background-color: #2c07f9;
+             color: rgb(255, 255, 255);
+             
+}
+
+
+
+
+
+
+
+
+
+.laps{
+   width: 250px;
+
+    list-style: none;
+    color: black;
+    height: 300px;
+    overflow: auto;
+    position: relative;
+    margin-top: 30px;/*30*   0px*/
+    font-weight: 500;
+    padding-top:120px ;
+    padding-bottom: 120px;/*120px  10px*/
+
+
+
+}
+
+.laps::-webkit-scrollbar{
+    display: none;
+}
+.lap-item{
+    width: 100%;
+    padding: 15px;
+    height: 50px;
+    color: rgb(255, 255, 255);
+    font-size: larger;
+    text-align: center;
+    border: 2px solid rgb(255, 255, 255);/*#444*/
+    border-radius: 30px;
+    margin-bottom: 20px;
+    background: #000000;/*61fd0c   01f8f4   cc47e9*/
+   
+                 -webkit-animation:slide-top .5s cubic-bezier(.25,.46,.45,.94) both;animation:slide-top .5s cubic-bezier(.25,.46,.45,.94) both
+    
+}
+
+
+
+@keyframes shadow-drop-2-center{0%{transform:translateZ(0);box-shadow:0 0 0 0 transparent}100%{transform:translateZ(50px);box-shadow:0 0 20px 0 rgba(0,0,0,.35)}}
+
+
+
+ @-webkit-keyframes slide-top{0%{-webkit-transform:translateY(0);transform:translateY(0)}100%{-webkit-transform:translateY(-100px);transform:translateY(-100px)}}@keyframes slide-top{0%{-webkit-transform:translateY(0);transform:translateY(0)}100%{-webkit-transform:translateY(-100px);transform:translateY(-100px)}}
+
+
+.number{
+    color: rgb(30, 93, 251);
+   font-weight: 500;
+    
+}
+.time-stamp{
+    display: inline-block;
+    margin-left: 25px;
+
+
+}
+
+.animation-bg{
+    background: linear-gradient(-45deg,#ee7752,#e73c7e,#23a6d5,#23d5ab);
+    background-size: 400% 400%;
+    animation: gradient 1s ease infinite;
+}
+
+@keyframes gradient{
+    0%{
+        background-position: 0% 50%;
+    }
+    50%{
+        background-position: 100% 50%;
+    }
+    100%{
+        background-position: 0% 50%;
+    }
+}
+
+.lap-clear-button{
+    display: block;
+    position: fixed;
+    z-index: 1000;
+    bottom: 35px;
+    left: 50%;
+    width: 120px;
+    transform: translate(-50%);
+    
+    padding: 15px 0;
+   border-radius: 50px;
+   background-color: rgba(255, 255, 255, 0.9);
+   border: 2px solid black;
+   cursor: pointer;
+   @import url('https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100..900;1,100..900&family=Teko:wght@300..700&display=swap');
+   font-weight: 500;
+   border: 2px solid black;
+   /*background: #e04242;*/
+/*box-shadow:  41px 41px 88px #7a45df,
+             -41px -41px 88px #da3bc2;
+             margin: 0px;/*15*/
+             
+   
+}
+.lap-clear-button:hover{
+    background-color: orange;
+    color: white;
+}
+
+.hidden{
+    visibility: hidden;
+}
+
+
+@media(min-width:768px){
+
+    
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        outline: none;
+        
+    }
+    
+    
+    .slide-right{
+        -webkit-animation: slide-right 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+                animation: slide-right 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    }
+    
+    @-webkit-keyframes slide-right {
+        0% {
+          -webkit-transform: translateX(0);
+                  transform: translateX(0);
+        }
+        100% {
+          -webkit-transform: translateX(1px);
+                  transform: translateX(1px);
+        }
+      }
+      @keyframes slide-right {
+        0% {
+          -webkit-transform: translateX(0);
+                  transform: translateX(0);
+        }
+        100% {
+          -webkit-transform: translateX(1px);
+                  transform: translateX(1px);
+        }
+      }
+    .slide{
+        -webkit-animation: slide-left 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+                animation: slide-left 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    }
+    /* ----------------------------------------------
+     * Generated by Animista on 2024-6-2 12:20:27
+     * Licensed under FreeBSD License.
+     * See http://animista.net/license for more info. 
+     * w: http://animista.net, t: @cssanimista
+     * ---------------------------------------------- */
+    
+    /**
+     * ----------------------------------------
+     * animation slide-left
+     * ----------------------------------------
+     */
+     @-webkit-keyframes slide-left {
+        0% {
+          -webkit-transform: translateX(0);
+                  transform: translateX(0);
+        }
+        100% {
+          -webkit-transform: translateX(-170px);
+                  transform: translateX(-170px);
+        }
+      }
+      @keyframes slide-left {
+        0% {
+          -webkit-transform: translateX(0);
+                  transform: translateX(0);
+        }
+        100% {
+          -webkit-transform: translateX(-170px);
+                  transform: translateX(-170px);
+        }
+      }
+      
+    
+    .container{
+        display: flex;
+        justify-content:space-between;
+    }
+    
+    body{
+        background-color: white;
+        width: 100%;
+        height: 100vh;
+        font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        font-size: 16px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+       /* background: rgb(2,0,36);
+       background: linear-gradient(74deg, rgba(2,0,36,1) 0%, rgba(132,14,164,1) 0%, rgba(255,81,0,1) 74%);*/
+       background: rgb(2,0,36);
+    background: linear-gradient(74deg, rgba(2,0,36,1) 0%, rgba(164,14,47,1) 0%, rgba(255,81,0,1) 55%);
+        /*background-image: radial-gradient(circle at center center, rgb(241, 195, 19),rgb(244, 150, 32),rgb(246, 105, 45),rgb(249, 59, 57),rgb(251, 14, 70));*/
+        background: rgb(2,0,36);
+    background: linear-gradient(74deg, rgba(2,0,36,1) 0%, rgba(164,14,47,1) 0%, rgba(141,0,255,1) 96%);
+    
+       /* background-image: linear-gradient(-45deg ,#49024e, #e560dc,#e28538,#ef5f5f,#d840b6);
+        animation: bg 10s ease infinite;
+        background-size: 400% 400%;*/
+       
+        
+    }
+    @keyframes bg{
+        0%{
+            background-position: 0% 50%;
+    
+        }
+        50%{
+            background-position: 100% 100%;
+            
+        }
+        100%{
+            background-position: 0% 50%;
+            
+        }
+    }
+    .outercircle{
+        width: 250px;
+        height: 250px;
+        background-color: white;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 3px solid black;
+        margin-right: 230px;
+        margin-top: -30px;
+       
+    
+       /* box-shadow:  -10px 10px 45px #cdc3c3,
+        10px -1px 75px #e7dfdf;*/
+        position: relative;
+        left: 240px;
+    
+                 
+    
+    }
+    .innercircle{
+        width: 230px;
+        height: 230px;
+        background-color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+       background-image: linear-gradient(45deg, rgba(187, 187, 187,0.04) 0%, rgba(187, 187, 187,0.04) 50%,rgba(86, 86, 86,0.04) 50%, rgba(86, 86, 86,0.04) 100%),linear-gradient(135deg, rgba(166, 166, 166,0.04) 0%, rgba(166, 166, 166,0.04) 50%,rgba(92, 92, 92,0.04) 50%, rgba(92, 92, 92,0.04) 100%),linear-gradient(90deg, rgb(20,20,20),rgb(20,20,20)); background-size: 142px 142px;
+       /*background-image: radial-gradient(circle at bottom left, rgb(150, 150, 150),rgb(249, 249, 249));*/
+    
+    }
+    
+    
+    
+    .text{
+        color: white;
+        font-size: 23px;
+    }
+    .min{
+        font-size: 40px;
+    }
+    .sec{
+        font-size: 30px;
+    }
+    .minsec{
+        font-size: 25px;
+    }
+    .button-wrapper{
+        width: 250px;
+        margin-top: 25px;
+        display: flex;
+        justify-content:space-between;
+       
+    }
+    
+    .button{
+        width: 90px;
+        height: 40px;
+        border-radius:10px;
+        border: 2px solid black;
+        background-color: white;
+        color: black;
+        cursor: pointer;
+        margin-left: 10px ;
+        margin-right: 10px ;
+        @import url('https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100..900;1,100..900&family=Teko:wght@300..700&display=swap');
+        
+        font-style:normal;
+        font-weight: 700;
+        
+       
+    
+        position: relative;
+        left: 240px;
+        
+        
+    }
+    
+    .button:hover{
+        background-color: #2c07f9;
+                 color: rgb(255, 255, 255);
+                
+    }
+    
+   .hel{
+    display: inline;
+        color: rgb(255, 255, 255);
+        position: absolute;
+        top: 25px;
+        right: 460px;
+        text-align: center;
+        letter-spacing: 10px;
+       
+        border-radius: 20px;
+        width:600px;
+        
+        
+        
+    
+    }
+    
+    
+    
+    
+    
+    
+    
+    .laps{
+       width: 250px;
+    
+        list-style: none;
+        color: black;
+        height: 300px;
+        overflow: auto;
+        position: relative;
+        margin-top: -10px;/*30*   0px*/
+        font-weight: 500;
+        padding-top:100px ;
+        padding-bottom: 10px;/*120px  10px*/
+        left: -30px;
+    
+       
+        
+    
+    
+    
+        
+        
+    
+    
+    
+    }
+    
+    .laps::-webkit-scrollbar{
+        display: none;
+    }
+    .lap-item{
+        width: 100%;
+        padding: 15px;
+        height: 50px;
+        color: rgb(253, 253, 253);
+        
+        font-size: larger;
+        text-align: center;
+        border: 2px solid rgb(255, 255, 255);/*#444*/
+        cursor: pointer;
+        border-radius: 30px;
+        background-image: linear-gradient(200deg, rgba(213, 213, 213, 0.01) 0%, rgba(213, 213, 213, 0.01) 14.286%,rgba(140, 140, 140, 0.01) 14.286%, rgba(140, 140, 140, 0.01) 28.572%,rgba(52, 52, 52, 0.01) 28.572%, rgba(52, 52, 52, 0.01) 42.858%,rgba(38, 38, 38, 0.01) 42.858%, rgba(38, 38, 38, 0.01) 57.144%,rgba(159, 159, 159, 0.01) 57.144%, rgba(159, 159, 159, 0.01) 71.42999999999999%,rgba(71, 71, 71, 0.01) 71.43%, rgba(71, 71, 71, 0.01) 85.71600000000001%,rgba(88, 88, 88, 0.01) 85.716%, rgba(88, 88, 88, 0.01) 100.002%),linear-gradient(337deg, rgba(25, 25, 25, 0.01) 0%, rgba(25, 25, 25, 0.01) 12.5%,rgba(150, 150, 150, 0.01) 12.5%, rgba(150, 150, 150, 0.01) 25%,rgba(84, 84, 84, 0.01) 25%, rgba(84, 84, 84, 0.01) 37.5%,rgba(85, 85, 85, 0.01) 37.5%, rgba(85, 85, 85, 0.01) 50%,rgba(188, 188, 188, 0.01) 50%, rgba(188, 188, 188, 0.01) 62.5%,rgba(80, 80, 80, 0.01) 62.5%, rgba(80, 80, 80, 0.01) 75%,rgba(73, 73, 73, 0.01) 75%, rgba(73, 73, 73, 0.01) 87.5%,rgba(219, 219, 219, 0.01) 87.5%, rgba(219, 219, 219, 0.01) 100%),linear-gradient(203deg, rgba(233, 233, 233, 0.01) 0%, rgba(233, 233, 233, 0.01) 25%,rgba(114, 114, 114, 0.01) 25%, rgba(114, 114, 114, 0.01) 50%,rgba(164, 164, 164, 0.01) 50%, rgba(164, 164, 164, 0.01) 75%,rgba(228, 228, 228, 0.01) 75%, rgba(228, 228, 228, 0.01) 100%),linear-gradient(317deg, rgba(139, 139, 139, 0.02) 0%, rgba(139, 139, 139, 0.02) 16.667%,rgba(44, 44, 44, 0.02) 16.667%, rgba(44, 44, 44, 0.02) 33.334%,rgba(166, 166, 166, 0.02) 33.334%, rgba(166, 166, 166, 0.02) 50.001000000000005%,rgba(2, 2, 2, 0.02) 50.001%, rgba(2, 2, 2, 0.02) 66.668%,rgba(23, 23, 23, 0.02) 66.668%, rgba(23, 23, 23, 0.02) 83.33500000000001%,rgba(21, 21, 21, 0.02) 83.335%, rgba(21, 21, 21, 0.02) 100.002%),linear-gradient(328deg, rgba(3, 3, 3, 0.03) 0%, rgba(3, 3, 3, 0.03) 12.5%,rgba(116, 116, 116, 0.03) 12.5%, rgba(116, 116, 116, 0.03) 25%,rgba(214, 214, 214, 0.03) 25%, rgba(214, 214, 214, 0.03) 37.5%,rgba(217, 217, 217, 0.03) 37.5%, rgba(217, 217, 217, 0.03) 50%,rgba(68, 68, 68, 0.03) 50%, rgba(68, 68, 68, 0.03) 62.5%,rgba(118, 118, 118, 0.03) 62.5%, rgba(118, 118, 118, 0.03) 75%,rgba(200, 200, 200, 0.03) 75%, rgba(200, 200, 200, 0.03) 87.5%,rgba(198, 198, 198, 0.03) 87.5%, rgba(198, 198, 198, 0.03) 100%),linear-gradient(97deg, rgba(195, 195, 195, 0.03) 0%, rgba(195, 195, 195, 0.03) 16.667%,rgba(177, 177, 177, 0.03) 16.667%, rgba(177, 177, 177, 0.03) 33.334%,rgba(170, 170, 170, 0.03) 33.334%, rgba(170, 170, 170, 0.03) 50.001000000000005%,rgba(158, 158, 158, 0.03) 50.001%, rgba(158, 158, 158, 0.03) 66.668%,rgba(121, 121, 121, 0.03) 66.668%, rgba(121, 121, 121, 0.03) 83.33500000000001%,rgba(146, 146, 146, 0.03) 83.335%, rgba(146, 146, 146, 0.03) 100.002%),linear-gradient(268deg, rgba(103, 103, 103, 0.03) 0%, rgba(103, 103, 103, 0.03) 25%,rgba(112, 112, 112, 0.03) 25%, rgba(112, 112, 112, 0.03) 50%,rgba(4, 4, 4, 0.03) 50%, rgba(4, 4, 4, 0.03) 75%,rgba(227, 227, 227, 0.03) 75%, rgba(227, 227, 227, 0.03) 100%),linear-gradient(90deg, hsl(98,0%,0%),hsl(98,0%,0%));
+        
+        color: rgb(247, 247, 247);
+        margin-bottom: 10px;
+        
+       
+                     -webkit-animation:slide-top .5s cubic-bezier(.25,.46,.45,.94) both;animation:slide-top .5s cubic-bezier(.25,.46,.45,.94) both
+        
+    }
+    
+    
+    
+    @keyframes shadow-drop-2-center{0%{transform:translateZ(0);box-shadow:0 0 0 0 transparent}100%{transform:translateZ(50px);box-shadow:0 0 20px 0 rgba(0,0,0,.35)}}
+    
+    
+    
+     @-webkit-keyframes slide-top{0%{-webkit-transform:translateY(0);transform:translateY(0)}100%{-webkit-transform:translateY(-100px);transform:translateY(-100px)}}@keyframes slide-top{0%{-webkit-transform:translateY(0);transform:translateY(0)}100%{-webkit-transform:translateY(-100px);transform:translateY(-100px)}}
+    
+    
+    .number{
+        color: rgb(10, 173, 205);
+       font-weight: 500;
+        
+    }
+    .time-stamp{
+        display: inline-block;
+        margin-left: 25px;
+    
+    
+    }
+    
+    .animation-bg{
+        background: linear-gradient(-45deg,#ee7752,#e73c7e,#23a6d5,#23d5ab);
+        background-size: 400% 400%;
+        animation: gradient 1s ease infinite;
+    }
+    
+    @keyframes gradient{
+        0%{
+            background-position: 0% 50%;
+        }
+        50%{
+            background-position: 100% 50%;
+        }
+        100%{
+            background-position: 0% 50%;
+        }
+    }
+    
+    .lap-clear-button{
+        display: block;
+        position: fixed;
+        z-index: 1000;
+        bottom: 35px;
+        left: 50%;
+        width: 120px;
+        transform: translate(-50%);
+        
+        padding: 15px 0;
+       border-radius: 50px;
+       background-color: rgba(255, 255, 255, 0.9);
+       border: 2px solid black;
+       cursor: pointer;
+       @import url('https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100..900;1,100..900&family=Teko:wght@300..700&display=swap');
+       font-weight: 500;
+       border: 2px solid black;
+       /*background: #e04242;*/
+    box-shadow:  41px 41px 88px #ad2727,
+                 -41px -41px 88px #eb3535;
+    
+                 
+                 margin: 0px;/*15*/
+                 
+       
+    }
+    .lap-clear-button:hover{
+        background-color: rgb(0, 119, 255);
+        color: white;
+    }
+    
+    .hidden{
+        visibility: hidden;
+    }}
